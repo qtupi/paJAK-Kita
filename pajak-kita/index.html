@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F8F3E9">
+  <meta name="description" content="paJAK-Kita membantu warga memahami penerimaan pajak daerah dan belanja APBD Jakarta melalui informasi yang jelas dan transparan.">
+
+  <title>paJAK-Kita — Pahami Data Publik Jakarta</title>
+
+  <!-- Favicon: ikon kecil pada tab browser -->
+  <link rel="icon" type="image/png" href="assets/favicon-pajakkita.png">
+  <link rel="shortcut icon" type="image/png" href="assets/favicon-pajakkita.png">
+
+  <!-- Font Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS utama -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/card-generator.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#beranda" aria-label="paJAK-Kita, beranda">
+        <img src="assets/logo-pajakkita-monas-grafik.svg" alt="Logo paJAK-Kita Monas Grafik">
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu navigasi" aria-expanded="false">☰</button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+        <a class="active" href="#beranda">Beranda</a>
+        <a href="#penerimaan">Penerimaan Pajak</a>
+        <a href="#apbd">Belanja APBD</a>
+        <a href="#kamus">Kamus Pajak</a>
+        <a class="nav-cta" href="#kartu">Buat Kartu Insight <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero container" id="beranda">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          DATA PUBLIK JAKARTA, LEBIH MUDAH DIPAHAMI
+        </div>
+
+        <h1>Kenali pajaknya.<br><span>Pahami anggarannya.</span></h1>
+
+        <p class="hero-description">
+          paJAK-Kita membantu warga memahami penerimaan pajak daerah dan belanja APBD Jakarta melalui informasi yang jelas, sumber yang terbuka, dan penjelasan yang mudah dipahami.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#penerimaan">Jelajahi Data <span aria-hidden="true">→</span></a>
+          <a class="button button-secondary" href="#tentang-data">Cara Kami Menyajikan Data</a>
+        </div>
+
+        <div class="trust-note">
+          <span class="trust-icon">✓</span>
+          <span>Setiap data perlu punya sumber, periode, dan metode yang bisa diperiksa.</span>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+
+        <div class="hero-sticker">KENALI<br><b>DATA KITA</b></div>
+
+        <img
+          class="hero-ondi"
+          src="assets/maskot-ondi/ondi-02-menyambut.svg"
+          alt="Ondi, maskot paJAK-Kita, menyambut pengunjung"
+        >
+
+        <div class="hero-caption">
+          <span class="caption-dot"></span>
+          Kenalan dulu dengan Ondi!
+        </div>
+      </div>
+    </section>
+
+    <!-- Motif kain Betawi dengan Animasi Domino Berjalan -->
+    <div class="motif-band" role="img" aria-label="Motif kain Betawi sebagai pemisah visual">
+      <div 
+        class="motif-pattern" 
+        style="background-image: url('assets/motifs/kain-betawi-strip.svg');"
+        aria-hidden="true"
+      ></div>
+    </div>
+
+    <section class="intro-section section container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">MULAI DARI YANG PENTING</p>
+          <h2>Data publik, <span>bahasa sehari-hari.</span></h2>
+        </div>
+
+        <p class="section-intro">
+          Pilih informasi yang ingin kamu pahami. Angka final akan ditampilkan setelah dataset diverifikasi dan disambungkan.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <a class="feature-card" id="penerimaan" href="#tentang-data">
+          <div class="feature-icon red-icon" aria-hidden="true">↗</div>
+          <div class="card-kicker">01 / PENERIMAAN</div>
+          <h3>Penerimaan Pajak Daerah</h3>
+          <p>Telusuri penerimaan berdasarkan jenis pajak, wilayah, dan periode yang tersedia.</p>
+          <span class="card-link">Jelajahi penerimaan <b aria-hidden="true">→</b></span>
+        </a>
+
+        <a class="feature-card" id="apbd" href="#tentang-data">
+          <div class="feature-icon gold-icon" aria-hidden="true">▥</div>
+          <div class="card-kicker">02 / ANGGARAN</div>
+          <h3>Belanja APBD</h3>
+          <p>Bandingkan nilai anggaran dan realisasi berdasarkan OPD serta periode data.</p>
+          <span class="card-link">Lihat belanja APBD <b aria-hidden="true">→</b></span>
+        </a>
+
+        <a class="feature-card" id="kamus" href="#tentang-data">
+          <div class="feature-icon green-icon" aria-hidden="true">Aa</div>
+          <div class="card-kicker">03 / PEMAHAMAN</div>
+          <h3>Kamus Pajak</h3>
+          <p>Pahami istilah perpajakan daerah dengan penjelasan sederhana dan sumber rujukan.</p>
+          <span class="card-link">Pahami istilah <b aria-hidden="true">→</b></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         PEMBUAT KARTU INSIGHT (PRD R6, R8: 5 DESAIN KARTU 3:4 & KONFIGURASI)
+         ========================================================================= -->
+    <section class="card-section-wrapper" id="kartu">
+      <div class="container">
+        <div class="section-heading" style="margin-bottom: 2.25rem;">
+          <div>
+            <p class="eyebrow">BAGIKAN PEMAHAMAN • CORONG TRANSPARANSI</p>
+            <h2>Pembuat Kartu Insight <span>paJAK-Kita</span></h2>
+          </div>
+          <p class="section-intro">
+            Buat dan bagikan kartu fakta pajak daerah Jakarta dengan nama dan wilayah pilihanmu. Didesain vertikal rasio 3:4 khusus untuk status media sosial, diproses 100% di browser tanpa merekam privasimu.
+          </p>
+        </div>
+
+        <div class="card-generator-grid">
+          <!-- Kolom Kiri: Konfigurasi Kartu -->
+          <div class="card-config-box">
+            <h3 class="card-config-title">
+              Konfigurasi Kartu
+            </h3>
+
+            <!-- Form: Nama Lengkap / Panggilan -->
+            <div class="card-config-group">
+              <label for="card-input-name" class="card-config-label">
+                Nama Lengkap / Panggilan
+              </label>
+              <input
+                type="text"
+                id="card-input-name"
+                class="card-config-input"
+                value="Raihan"
+                placeholder="Masukkan namamu..."
+                maxlength="35"
+              />
+            </div>
+
+            <!-- Form: Wilayah Domisili -->
+            <div class="card-config-group">
+              <label for="card-input-region" class="card-config-label">
+                Wilayah Domisili (Kota Administrasi)
+              </label>
+              <select id="card-input-region" class="card-config-select">
+                <option value="Jakarta Selatan" selected>Jakarta Selatan</option>
+                <option value="Jakarta Pusat">Jakarta Pusat</option>
+                <option value="Jakarta Barat">Jakarta Barat</option>
+                <option value="Jakarta Timur">Jakarta Timur</option>
+                <option value="Jakarta Utara">Jakarta Utara</option>
+                <option value="Kepulauan Seribu">Kepulauan Seribu</option>
+                <option value="Seluruh DKI Jakarta">Seluruh DKI Jakarta (Belanja)</option>
+                <option value="Semua Wilayah">Semua Wilayah (Tampilkan Semua)</option>
+              </select>
+            </div>
+
+            <!-- Form: Pilihan Fakta Insight -->
+            <div class="card-config-group">
+              <label for="card-insight-select" class="card-config-label">
+                Fakta &amp; Angka Insight
+              </label>
+              <select id="card-insight-select" class="card-config-select">
+                <!-- Diisi otomatis oleh cardGenerator.js -->
+              </select>
+            </div>
+
+            <!-- Form: Pilihan Template Desain -->
+            <div class="card-config-group">
+              <label class="card-config-label">
+                Pilihan Template Desain (Rasio 3:4)
+              </label>
+              <div class="card-templates-list">
+                <label class="template-radio-label active">
+                  <input type="radio" name="card-template" value="sunburst" checked />
+                  <div class="template-radio-text">
+                    <strong>Koleksi Sunburst</strong>
+                    <div class="template-radio-desc">Warm Red &amp; Golden Sunburst Rays</div>
+                  </div>
+                </label>
+                <label class="template-radio-label">
+                  <input type="radio" name="card-template" value="kuning" />
+                  <div class="template-radio-text">
+                    <strong>Kuning Ceria</strong>
+                    <div class="template-radio-desc">Bright Gold &amp; Organic Red Waves</div>
+                  </div>
+                </label>
+                <label class="template-radio-label">
+                  <input type="radio" name="card-template" value="komik" />
+                  <div class="template-radio-text">
+                    <strong>Komik Pop</strong>
+                    <div class="template-radio-desc">Halftone Dots &amp; Comic Speech Bubble</div>
+                  </div>
+                </label>
+                <label class="template-radio-label">
+                  <input type="radio" name="card-template" value="split" />
+                  <div class="template-radio-text">
+                    <strong>Split Gelombang</strong>
+                    <div class="template-radio-desc">Two-tone Wave &amp; Sunburst Emblem</div>
+                  </div>
+                </label>
+                <label class="template-radio-label">
+                  <input type="radio" name="card-template" value="blob" />
+                  <div class="template-radio-text">
+                    <strong>Blob Lengkung</strong>
+                    <div class="template-radio-desc">Warm Cream &amp; Organic Betawi Blobs</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Tombol Aksi -->
+            <div class="card-actions-group">
+              <button type="button" id="card-btn-randomize" class="btn-card-action btn-card-random">
+                <span aria-hidden="true">🔄</span> Acak Ulang Fakta Insight
+              </button>
+
+              <button type="button" id="card-btn-download" class="btn-card-action btn-card-download">
+                <span aria-hidden="true">📥</span> Unduh Kartu Gambar (PNG 3:4)
+              </button>
+
+              <button type="button" id="card-btn-share" class="btn-card-action btn-card-share">
+                <span aria-hidden="true">🔗</span> Bagikan ke Media Sosial
+              </button>
+            </div>
+
+            <!-- Privasi Terjamin (R8) -->
+            <div class="card-privacy-badge">
+              <span aria-hidden="true">🔒</span>
+              <strong>Privasi Terjamin (R8):</strong> Nama dan wilayah Anda diproses 100% di peramban browser perangkat Anda. Tidak ada data pribadi yang dikirim atau disimpan di server mana pun.
+            </div>
+          </div>
+
+          <!-- Kolom Kanan: Pratinjau Langsung Kartu -->
+          <div class="card-preview-column">
+            <div class="card-preview-header">
+              PRATINJAU LANGSUNG KARTU (RASIO 3:4 VERTIKAL)
+            </div>
+
+            <div class="card-preview-viewport-frame">
+              <div class="card-preview-viewport" id="card-preview-viewport">
+                <div class="card-preview-scale-wrapper" id="card-preview-scale-wrapper">
+                  <div id="card-mount-point">
+                    <!-- Dimuat secara dinamis oleh cardGenerator.js -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-preview-note">
+                Format siap dibagikan ke Instagram Story, WhatsApp Status, X (Twitter), dan LinkedIn.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-section section container" id="tentang-data">
+      <div class="trust-heading">
+        <p class="eyebrow">TRANSPARANSI ADALAH DASAR</p>
+
+        <h2>Setiap angka punya <span>jejak.</span></h2>
+
+        <p>
+          paJAK-Kita dirancang agar pengunjung dapat memeriksa asal-usul informasi, bukan hanya melihat visualisasi.
+        </p>
+      </div>
+
+      <div class="trust-grid">
+        <div class="trust-item">
+          <span class="trust-number">01</span>
+          <h3>Sumber</h3>
+          <p>Dataset dan penerbitnya disebutkan dengan jelas.</p>
+        </div>
+
+        <div class="trust-item">
+          <span class="trust-number">02</span>
+          <h3>Periode</h3>
+          <p>Tahun atau periode data terlihat di dekat angka.</p>
+        </div>
+
+        <div class="trust-item">
+          <span class="trust-number">03</span>
+          <h3>Metodologi</h3>
+          <p>Cara menghitung dan mengolah angka dapat ditelusuri.</p>
+        </div>
+
+        <div class="trust-item">
+          <span class="trust-number">04</span>
+          <h3>Keterbatasan</h3>
+          <p>Data kosong atau sementara dijelaskan, bukan ditebak.</p>
+        </div>
+      </div>
+
+      <div class="data-notice">
+        <img
+          src="assets/maskot-ondi/ondi-06-peringatan-informasi.png"
+          alt=""
+          aria-hidden="true"
+        >
+
+        <div>
+          <strong>Catatan pengembangan</strong>
+          <p>
+            Ini adalah kerangka antarmuka awal. Nilai pajak, anggaran, dan realisasi belum ditampilkan sebagai angka faktual sampai dataset resmi diverifikasi.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-brand">
+        <img src="assets/logo-pajakkita-monas-grafik.svg" alt="Logo paJAK-Kita">
+        <p>Memahami data publik Jakarta, bersama-sama.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#penerimaan">Penerimaan Pajak</a>
+        <a href="#apbd">Belanja APBD</a>
+        <a href="#kamus">Kamus Pajak</a>
+        <a href="#tentang-data">Tentang Data</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>paJAK-Kita · WIA MIA 2026</span>
+      <span>Dibuat untuk membantu warga memahami data publik.</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/htmlToImage.js"></script>
+  <script src="js/html2canvas.min.js"></script>
+  <script src="js/cardGenerator.js?v=3.1"></script>
+</body>
+</html>

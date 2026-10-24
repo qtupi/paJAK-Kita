@@ -1,0 +1,263 @@
+/* paJAK-Kita — Jakarta Editorial / Betawi Modern */
+:root {
+  --color-primary: #B82025;
+  --color-gold: #E5AD27;
+  --color-green: #207A5B;
+  --color-text: #211F1D;
+  --color-background: #F8F3E9;
+  --color-surface: #FFFFFF;
+  --color-border: #E5DDD0;
+  --color-muted: #716B64;
+  --color-soft-red: #F8E8E6;
+  --color-soft-gold: #FBF1D6;
+  --color-soft-green: #E5F3EC;
+  --font-family-base: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-6: 24px; --space-8: 32px; --space-12: 48px; --space-16: 64px;
+  --radius-sm: 6px; --radius-input: 8px; --radius-button: 10px;
+  --radius-panel: 12px; --radius-card: 16px; --radius-large: 24px;
+  --shadow-soft: 0 10px 28px rgba(33,31,29,.06);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { margin: 0; background: var(--color-background); color: var(--color-text); font-family: var(--font-family-base); font-size: 16px; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button, input, select { font: inherit; }
+.container { width: min(1200px, calc(100% - 64px)); margin-inline: auto; }
+.skip-link { position: absolute; left: -9999px; top: 8px; z-index: 1000; padding: 8px 12px; background: white; }
+.skip-link:focus { left: 8px; }
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(248,243,233,.94); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(229,221,208,.8); }
+.nav-wrap { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.brand img { width: 204px; height: auto; max-height: 62px; object-fit: contain; }
+.main-nav { display: flex; align-items: center; gap: 26px; font-size: 14px; font-weight: 600; color: #514B45; }
+.main-nav a:not(.nav-cta) { padding: 8px 0; transition: color .2s ease; }
+.main-nav a:hover, .main-nav a.active { color: var(--color-primary); }
+.nav-cta { background: var(--color-primary); color: white; padding: 12px 16px; border-radius: var(--radius-button); box-shadow: 0 4px 0 rgba(128,20,24,.12); }
+.nav-cta:hover, .button-primary:hover { background: #981A1F; transform: translateY(-1px); }
+.nav-cta span { margin-left: 8px; }
+.menu-toggle { display: none; border: 1px solid var(--color-border); background: white; border-radius: 10px; min-width: 44px; min-height: 44px; color: var(--color-text); }
+.hero { min-height: 580px; display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 32px; padding-top: 54px; padding-bottom: 58px; }
+.hero-copy { padding: 12px 0; }
+.eyebrow { margin: 0 0 14px; color: var(--color-primary); font-size: 12px; line-height: 1.4; letter-spacing: .12em; font-weight: 800; }
+.hero .eyebrow { display: flex; align-items: center; gap: 9px; }
+.eyebrow-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-gold); box-shadow: 0 0 0 4px rgba(229,173,39,.17); }
+h1, h2, h3, p { margin-top: 0; }
+h1 { margin-bottom: 22px; font-size: clamp(36px, 4.2vw, 56px); line-height: 1.08; letter-spacing: -.045em; font-weight: 800; }
+h1 span, h2 span { color: var(--color-primary); }
+.hero-description { max-width: 590px; color: var(--color-muted); font-size: 18px; line-height: 1.7; margin-bottom: 28px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 12px 20px; border: 1px solid transparent; border-radius: var(--radius-button); font-size: 14px; font-weight: 700; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
+.button-primary { background: var(--color-primary); color: white; }
+.button-secondary { background: white; border-color: var(--color-border); color: var(--color-text); }
+.button-secondary:hover { border-color: var(--color-primary); color: var(--color-primary); }
+.trust-note { display: flex; align-items: flex-start; gap: 10px; margin-top: 24px; color: var(--color-muted); font-size: 13px; max-width: 500px; }
+.trust-icon { display: inline-grid; place-items: center; flex: 0 0 22px; width: 22px; height: 22px; border-radius: 50%; background: var(--color-soft-green); color: var(--color-green); font-weight: 800; }
+.hero-art { position: relative; display: grid; place-items: center; min-height: 440px; isolation: isolate; }
+.hero-orbit { position: absolute; z-index: -1; border-radius: 50%; }
+.orbit-one { width: min(390px, 88%); aspect-ratio: 1; background: #F0E4CB; }
+.orbit-two { width: min(330px, 76%); aspect-ratio: 1; border: 1px dashed rgba(184,32,37,.32); }
+.hero-ondi { width: min(330px, 72%); max-height: 405px; object-fit: contain; align-self: end; filter: drop-shadow(0 16px 12px rgba(33,31,29,.08)); }
+.hero-sticker { position: absolute; top: 50px; right: 1%; transform: rotate(8deg); padding: 12px 16px; border: 2px solid var(--color-primary); background: var(--color-surface); color: var(--color-primary); border-radius: 8px; text-align: center; font-size: 10px; line-height: 1.3; font-weight: 700; box-shadow: 4px 4px 0 var(--color-gold); }
+.hero-sticker b { font-size: 15px; }
+.hero-caption { position: absolute; bottom: 20px; left: 5%; display: flex; align-items: center; gap: 8px; padding: 9px 13px; border-radius: 999px; background: white; box-shadow: var(--shadow-soft); font-size: 12px; font-weight: 600; }
+.caption-dot { width: 8px; height: 8px; background: var(--color-green); border-radius: 50%; }
+
+/* =========================================
+   MOTIF BAND / KAIN BETAWI (EFEK DOMINO BERJALAN)
+   ========================================= */
+.motif-band { 
+  position: relative; 
+  background: var(--color-primary);
+  border-block: 3px solid var(--color-gold); 
+  overflow: hidden; 
+  width: 100%; 
+  height: 48px; 
+}
+
+/* Animasi Kain Berjalan dari Kanan ke Kiri */
+.motif-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%; /* Dibuat 200% agar saat bergeser tidak ada ruang kosong */
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto 100%;
+  
+  /* Animasi berjalan lambat (25 detik) berulang tanpa henti */
+  animation: dominoJalan 25s linear infinite;
+}
+
+@keyframes dominoJalan {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Bergeser setengah jalan (sesuai ukuran 200%) */
+}
+
+/* ========================================= */
+
+.section { padding-top: 88px; padding-bottom: 88px; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 34px; }
+h2 { margin-bottom: 0; font-size: clamp(28px, 3vw, 38px); line-height: 1.2; letter-spacing: -.035em; font-weight: 800; }
+.section-intro { max-width: 420px; margin-bottom: 4px; color: var(--color-muted); font-size: 15px; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
+.feature-card { min-height: 290px; padding: 26px; background: white; border: 1px solid var(--color-border); border-radius: var(--radius-card); display: flex; flex-direction: column; box-shadow: 0 4px 0 rgba(33,31,29,.02); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.feature-card:hover { transform: translateY(-4px); border-color: #D7C6B2; box-shadow: var(--shadow-soft); }
+.feature-icon { display: grid; place-items: center; width: 46px; height: 46px; margin-bottom: 22px; border-radius: 13px; font-size: 23px; font-weight: 700; }
+.red-icon { color: var(--color-primary); background: var(--color-soft-red); }
+.gold-icon { color: #8B6410; background: var(--color-soft-gold); }
+.green-icon { color: var(--color-green); background: var(--color-soft-green); font-size: 17px; }
+.card-kicker { margin-bottom: 8px; color: var(--color-muted); font-size: 10px; letter-spacing: .12em; font-weight: 800; }
+.feature-card h3 { margin-bottom: 10px; font-size: 21px; line-height: 1.3; letter-spacing: -.02em; }
+.feature-card p { margin-bottom: 22px; color: var(--color-muted); font-size: 14px; line-height: 1.65; }
+.card-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; color: var(--color-primary); font-size: 13px; font-weight: 700; }
+.insight-section { background: #F0E7D8; border-block: 1px solid #E7DCCB; }
+.insight-layout { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 90px; padding-top: 80px; padding-bottom: 80px; }
+.insight-copy h2 { margin-bottom: 20px; font-size: clamp(32px, 3.5vw, 44px); }
+.insight-copy > p:not(.eyebrow) { max-width: 440px; margin-bottom: 25px; color: var(--color-muted); }
+.insight-preview { position: relative; min-height: 350px; overflow: hidden; padding: 22px 26px 20px; border: 1px solid rgba(184,32,37,.16); border-radius: 18px; background: #FFFCF5; box-shadow: 0 22px 50px rgba(33,31,29,.10); }
+.preview-topline { display: flex; justify-content: space-between; color: var(--color-primary); font-size: 10px; letter-spacing: .12em; font-weight: 800; }
+.preview-mark { display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid var(--color-border); border-radius: 50%; }
+.preview-ondi { position: absolute; right: 5%; top: 55px; width: 42%; height: 220px; object-fit: contain; object-position: center bottom; }
+.preview-label { position: relative; z-index: 1; max-width: 55%; margin-top: 54px; margin-bottom: 10px; color: var(--color-primary); font-size: 10px; letter-spacing: .12em; font-weight: 800; }
+.insight-preview h3 { position: relative; z-index: 1; max-width: 58%; margin-bottom: 26px; font-size: clamp(20px, 2.1vw, 27px); line-height: 1.25; letter-spacing: -.03em; }
+.preview-footer { position: relative; z-index: 2; display: flex; align-items: end; justify-content: space-between; gap: 12px; padding-top: 16px; border-top: 1px solid var(--color-border); color: var(--color-muted); font-size: 10px; }
+.mini-logo { white-space: nowrap; color: var(--color-text); font-size: 12px; font-weight: 800; }
+
+/* Pattern untuk kartu insight (Statis, tidak berjalan) */
+.preview-pattern { 
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  right: 0; 
+  height: 12px; 
+  overflow: hidden; 
+  z-index: 3; 
+}
+.preview-pattern .motif-pattern {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: center;
+  transform: none; 
+  animation: none; /* Mematikan animasi berjalan di kartu kecil */
+}
+
+.trust-heading { max-width: 620px; margin-bottom: 38px; }
+.trust-heading h2 { margin-bottom: 16px; }
+.trust-heading > p:last-child { max-width: 540px; margin-bottom: 0; color: var(--color-muted); }
+.trust-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 20px; }
+.trust-item { padding: 22px 20px; border-top: 2px solid var(--color-gold); background: rgba(255,255,255,.62); border-radius: 0 0 12px 12px; }
+.trust-number { color: var(--color-primary); font-size: 12px; font-weight: 800; letter-spacing: .1em; }
+.trust-item h3 { margin: 10px 0 6px; font-size: 18px; }
+.trust-item p { margin: 0; color: var(--color-muted); font-size: 13px; line-height: 1.6; }
+.data-notice { display: flex; align-items: center; gap: 18px; margin-top: 28px; padding: 18px 22px; background: var(--color-soft-gold); border: 1px solid #EAD79E; border-radius: 12px; }
+.data-notice img { width: 66px; height: 66px; object-fit: contain; flex: 0 0 auto; }
+.data-notice strong { display: block; margin-bottom: 3px; font-size: 14px; }
+.data-notice p { margin: 0; color: #635944; font-size: 13px; }
+.site-footer { background: var(--color-text); color: #F8F3E9; padding-top: 42px; }
+.footer-main { display: flex; justify-content: space-between; gap: 40px; padding-bottom: 32px; }
+.footer-brand img { width: 190px; max-height: 60px; object-fit: contain; filter: brightness(0) invert(1); opacity: .95; }
+.footer-brand p { margin: 12px 0 0; color: #C7BFB4; font-size: 13px; }
+.footer-links { display: flex; flex-wrap: wrap; align-content: start; justify-content: flex-end; gap: 14px 24px; font-size: 13px; color: #E8DFD3; }
+.footer-links a:hover { color: var(--color-gold); }
+.footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 18px; padding-bottom: 20px; border-top: 1px solid #49433E; color: #BDB4A8; font-size: 11px; }
+:focus-visible { outline: 3px solid #207A5B; outline-offset: 3px; }
+
+@media (max-width: 1023px) {
+  .container { width: min(100% - 48px, 900px); }
+  .nav-wrap { gap: 18px; }
+  .brand img { width: 176px; }
+  .main-nav { gap: 15px; font-size: 12px; }
+  .nav-cta { padding: 10px 12px; }
+  .hero { min-height: 510px; gap: 12px; }
+  .hero-art { min-height: 380px; }
+  .hero-description { font-size: 16px; }
+  .insight-layout { gap: 42px; }
+  .trust-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
+@media (max-width: 700px) {
+  .container { width: calc(100% - 32px); }
+  .nav-wrap { min-height: 72px; }
+  .brand img { width: 166px; max-height: 54px; }
+  .menu-toggle { display: inline-grid; place-items: center; font-size: 22px; }
+  .main-nav { display: none; position: absolute; top: calc(100% + 1px); left: 0; right: 0; padding: 16px; background: var(--color-background); border-bottom: 1px solid var(--color-border); box-shadow: var(--shadow-soft); flex-direction: column; align-items: stretch; gap: 4px; }
+  .main-nav.open { display: flex; }
+  .main-nav a:not(.nav-cta) { padding: 11px 8px; }
+  .nav-cta { margin-top: 6px; text-align: center; }
+  .hero { grid-template-columns: 1fr; padding-top: 46px; padding-bottom: 28px; gap: 0; }
+  h1 { font-size: clamp(36px, 10vw, 48px); }
+  .hero-description { font-size: 16px; }
+  .hero-art { min-height: 330px; margin-top: 8px; }
+  .hero-ondi { width: min(260px, 70%); max-height: 300px; }
+  .orbit-one { width: min(290px, 82%); }
+  .orbit-two { width: min(250px, 70%); }
+  .hero-sticker { top: 28px; right: 3%; }
+  .hero-caption { bottom: 8px; left: 1%; }
+  
+  /* Responsif Kain Betawi */
+  .motif-band { height: 40px; }
+  
+  .section { padding-top: 60px; padding-bottom: 60px; }
+  .section-heading { display: block; margin-bottom: 24px; }
+  .section-intro { margin-top: 14px; }
+  h2 { font-size: 30px; }
+  .feature-grid { grid-template-columns: 1fr; gap: 14px; }
+  .feature-card { min-height: 0; padding: 22px; }
+  .feature-icon { margin-bottom: 16px; }
+  .insight-layout { grid-template-columns: 1fr; gap: 34px; padding-top: 58px; padding-bottom: 58px; }
+  .insight-preview { min-height: 320px; padding: 18px; }
+  .preview-ondi { top: 55px; width: 43%; height: 195px; }
+  .preview-label { margin-top: 52px; }
+  .insight-preview h3 { max-width: 60%; font-size: 22px; }
+  .preview-footer { font-size: 9px; }
+  .preview-pattern { height: 10px; }
+  .trust-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .trust-item { padding: 16px 14px; }
+  .data-notice { align-items: flex-start; padding: 14px; gap: 12px; }
+  .data-notice img { width: 48px; height: 48px; }
+  .footer-main { flex-direction: column; gap: 26px; }
+  .footer-links { justify-content: flex-start; gap: 12px 18px; }
+  .footer-bottom { flex-direction: column; gap: 6px; }
+}
+
+@media (max-width: 380px) {
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .button { width: 100%; }
+  .trust-grid { grid-template-columns: 1fr; }
+  .insight-preview h3 { max-width: 62%; font-size: 19px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+/* Animasi Ondi */
+.hero-ondi { animation: ondi-greet 3.2s ease-in-out infinite; transform-origin: 50% 90%; }
+@keyframes ondi-greet {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-ondi { animation: none; }
+}
+
+.preview-ondi {
+  animation: ondi-preview-float 3s ease-in-out infinite;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+@keyframes ondi-preview-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .preview-ondi { animation: none; }
+}
